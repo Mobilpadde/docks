@@ -4,7 +4,11 @@ ENV NAME=app
 
 RUN npm i -g yarn
 
-WORKDIR /
-#CMD react-native init $NAME
-RUN mkdir $NAME
-VOLUME /$NAME
+RUN react-native init APP
+RUN rm -Rf APP
+
+RUN mkdir /apps
+WORKDIR /apps
+CMD react-native init $NAME
+
+VOLUME /apps
