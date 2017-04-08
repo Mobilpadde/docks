@@ -4,4 +4,4 @@ name=${1:-app}
 
 docker build -t $name --build-arg NAME=$name .
 
-docker run $name
+docker run -t $name
